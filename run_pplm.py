@@ -728,8 +728,8 @@ def run_pplm_example(
 
     # load pretrained model
     model = GPT2LMHeadModel.from_pretrained(
-        pretrained_model,
-        output_hidden_states=True
+        pretrained_model#,
+        #output_hidden_states=True
     )
     model.to(device)
     model.eval()
