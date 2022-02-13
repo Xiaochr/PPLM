@@ -56,18 +56,18 @@ VERBOSITY_LEVELS = {
 }
 
 BAG_OF_WORDS_ARCHIVE_MAP = {
-    'legal': "https://github.com/Xiaochr/PPLM/blob/master/paper_code/wordlists/legal.txt",
-    'military': "https://s3.amazonaws.com/models.huggingface.co/bert/pplm/bow/military.txt",
-    'monsters': "https://s3.amazonaws.com/models.huggingface.co/bert/pplm/bow/monsters.txt",
-    'politics': "https://s3.amazonaws.com/models.huggingface.co/bert/pplm/bow/politics.txt",
-    'positive_words': "https://s3.amazonaws.com/models.huggingface.co/bert/pplm/bow/positive_words.txt",
-    'religion': "https://s3.amazonaws.com/models.huggingface.co/bert/pplm/bow/religion.txt",
+    'legal': "./paper_code/wordlists/legal.txt",
+    'military': "./paper_code/wordlists/military.txt",
+    'monsters': "./paper_code/wordlists/monsters.txt",
+    'politics': "./paper_code/wordlists/politics.txt",
+    'positive_words': "./paper_code/wordlists/positive_words.txt",
+    'religion': "./paper_code/wordlists/religion.txt",
     'science': "./paper_code/wordlists/science.txt",
-    'space': "https://s3.amazonaws.com/models.huggingface.co/bert/pplm/bow/space.txt",
-    'technology': "https://s3.amazonaws.com/models.huggingface.co/bert/pplm/bow/technology.txt",
+    'space': "./paper_code/wordlists/space.txt",
+    'technology': "./paper_code/wordlists/technology.txt",
     'school_life': "./paper_code/wordlists/school_life.txt",
-    'science_and_nature': "https://github.com/Xiaochr/PPLM/blob/master/paper_code/wordlists/science_and_nature.txt",
-    'sports': "https://github.com/Xiaochr/PPLM/blob/master/paper_code/wordlists/sports.txt",
+    'science_and_nature': "./paper_code/wordlists/science_and_nature.txt",
+    'sports': "./paper_code/wordlists/sports.txt",
     'daily_life': "./paper_code/wordlists/daily_life.txt",
 }
 
