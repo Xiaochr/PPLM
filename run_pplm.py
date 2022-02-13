@@ -56,13 +56,13 @@ VERBOSITY_LEVELS = {
 }
 
 BAG_OF_WORDS_ARCHIVE_MAP = {
-    'legal': "https://s3.amazonaws.com/models.huggingface.co/bert/pplm/bow/legal.txt",
+    'legal': "https://github.com/Xiaochr/PPLM/blob/master/paper_code/wordlists/legal.txt",
     'military': "https://s3.amazonaws.com/models.huggingface.co/bert/pplm/bow/military.txt",
     'monsters': "https://s3.amazonaws.com/models.huggingface.co/bert/pplm/bow/monsters.txt",
     'politics': "https://s3.amazonaws.com/models.huggingface.co/bert/pplm/bow/politics.txt",
     'positive_words': "https://s3.amazonaws.com/models.huggingface.co/bert/pplm/bow/positive_words.txt",
     'religion': "https://s3.amazonaws.com/models.huggingface.co/bert/pplm/bow/religion.txt",
-    'science': "https://github.com/Xiaochr/PPLM/blob/master/paper_code/wordlists/science.txt",
+    'science': "./paper_code/wordlists/science.txt",
     'space': "https://s3.amazonaws.com/models.huggingface.co/bert/pplm/bow/space.txt",
     'technology': "https://s3.amazonaws.com/models.huggingface.co/bert/pplm/bow/technology.txt",
     'school_life': "https://github.com/Xiaochr/PPLM/blob/master/paper_code/wordlists/school_life.txt",
