@@ -65,10 +65,10 @@ BAG_OF_WORDS_ARCHIVE_MAP = {
     'science': "./paper_code/wordlists/science.txt",
     'space': "https://s3.amazonaws.com/models.huggingface.co/bert/pplm/bow/space.txt",
     'technology': "https://s3.amazonaws.com/models.huggingface.co/bert/pplm/bow/technology.txt",
-    'school_life': "https://github.com/Xiaochr/PPLM/blob/master/paper_code/wordlists/school_life.txt",
+    'school_life': "./paper_code/wordlists/school_life.txt",
     'science_and_nature': "https://github.com/Xiaochr/PPLM/blob/master/paper_code/wordlists/science_and_nature.txt",
     'sports': "https://github.com/Xiaochr/PPLM/blob/master/paper_code/wordlists/sports.txt",
-    'daily_life': "https://github.com/Xiaochr/PPLM/blob/master/paper_code/wordlists/daily_life.txt",
+    'daily_life': "./paper_code/wordlists/daily_life.txt",
 }
 
 DISCRIMINATOR_MODELS_PARAMS = {
