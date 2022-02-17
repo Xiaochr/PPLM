@@ -215,8 +215,8 @@ def perturb_past(
         if loss_type == PPLM_BOW or loss_type == PPLM_BOW_DISCRIM:
             for one_hot_bow in one_hot_bows_vectors:
                 # print
-                print(probs.shape)
-                print(torch.t(one_hot_bow).shape)
+                # print(probs.shape)
+                # print(torch.t(one_hot_bow).shape)
 
                 bow_logits = torch.mm(probs, torch.t(one_hot_bow))
                 bow_loss = -torch.log(torch.sum(bow_logits))
