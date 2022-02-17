@@ -398,7 +398,8 @@ def build_bows_one_hot_vectors(bow_indices, tokenizer, device='cuda'):
         single_bow = list(filter(lambda x: len(x) <= 1, single_bow))
         single_bow = torch.tensor(single_bow).to(device)
         num_words = single_bow.shape[0]
-        one_hot_bow = torch.zeros(num_words, tokenizer.vocab_size).to(device)
+        #one_hot_bow = torch.zeros(num_words, tokenizer.vocab_size).to(device)
+        one_hot_bow = torch.zeros(num_words, len(tokenizer)).to(device)
         one_hot_bow.scatter_(1, single_bow, 1)
         one_hot_bows_vectors.append(one_hot_bow)
     return one_hot_bows_vectors
@@ -742,8 +743,8 @@ def run_pplm_example(
 
     # load tokenizer
     tokenizer = GPT2Tokenizer.from_pretrained(pretrained_model, bos_token='<|startoftext|>', eos_token='<|endoftext|>', pad_token='<|pad|>')
-    model.resize_token_embeddings(len(tokenizer))
-    
+    #model.resize_token_embeddings(len(tokenizer))
+
     model.to(device)
     model.eval()
 
