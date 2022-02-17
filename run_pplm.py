@@ -739,11 +739,15 @@ def run_pplm_example(
         pretrained_model,
         output_hidden_states=True
     )
-    model.to(device)
-    model.eval()
 
     # load tokenizer
     tokenizer = GPT2Tokenizer.from_pretrained(pretrained_model, bos_token='<|startoftext|>', eos_token='<|endoftext|>', pad_token='<|pad|>')
+    model.resize_token_embeddings(len(tokenizer))
+    
+    model.to(device)
+    model.eval()
+
+    
 
     # Freeze GPT-2 weights
     for param in model.parameters():
