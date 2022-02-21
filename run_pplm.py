@@ -65,6 +65,8 @@ BAG_OF_WORDS_ARCHIVE_MAP = {
     'science': "./paper_code/wordlists/science.txt",
     'space': "./paper_code/wordlists/space.txt",
     'technology': "./paper_code/wordlists/technology.txt",
+    'kitchen': "./paper_code/wordlists/kitchen.txt",
+    # ===
     'school_life': "./paper_code/wordlists/school_life.txt",
     'science_and_nature': "./paper_code/wordlists/science_and_nature.txt",
     'sports': "./paper_code/wordlists/sports.txt",
