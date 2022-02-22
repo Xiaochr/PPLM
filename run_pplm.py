@@ -577,7 +577,7 @@ def generate_text_pplm(
         unpert_logits, unpert_past, unpert_all_hidden = model(output_so_far)
         unpert_last_hidden = unpert_all_hidden[-1]
 
-        # check if we are abowe grad max length
+        # check if we are above grad max length
         if i >= grad_length:
             current_stepsize = stepsize * 0
         else:
@@ -773,7 +773,8 @@ def run_pplm_example(
         )
 
     print("= Prefix of sentence =")
-    print(tokenizer.decode(tokenized_cond_text, skip_special_tokens=True))
+    #print(tokenizer.decode(tokenized_cond_text, skip_special_tokens=True))
+    print(tokenizer.decode(tokenized_cond_text))
     print()
 
     # generate unperturbed and perturbed texts
@@ -806,7 +807,8 @@ def run_pplm_example(
     )
 
     # untokenize unperturbed text
-    unpert_gen_text = tokenizer.decode(unpert_gen_tok_text.tolist()[0], skip_special_tokens=True)
+    #unpert_gen_text = tokenizer.decode(unpert_gen_tok_text.tolist()[0], skip_special_tokens=True)
+    unpert_gen_text = tokenizer.decode(unpert_gen_tok_text.tolist()[0])
 
     if verbosity_level >= REGULAR:
         print("=" * 80)
@@ -838,13 +840,23 @@ def run_pplm_example(
                     if word_id in bow_word_ids:
                         pert_gen_text += '{}{}{}'.format(
                             colorama.Fore.RED,
-                            tokenizer.decode([word_id], skip_special_tokens=True),
+                            #tokenizer.decode([word_id], skip_special_tokens=True),
+                            tokenizer.decode([word_id]),
                             colorama.Style.RESET_ALL
                         )
                     else:
-                        pert_gen_text += tokenizer.decode([word_id], skip_special_tokens=True)
+                        #pert_gen_text += tokenizer.decode([word_id], skip_special_tokens=True)
+                        pert_gen_text += tokenizer.decode([word_id])
             else:
-                pert_gen_text = tokenizer.decode(pert_gen_tok_text.tolist()[0], skip_special_tokens=True)
+                #pert_gen_text = tokenizer.decode(pert_gen_tok_text.tolist()[0], skip_special_tokens=True)
+                #pert_gen_text = tokenizer.decode(pert_gen_tok_text.tolist()[0])
+
+                pert_gen_text = ''
+                for word_id in pert_gen_tok_text.tolist()[0]:
+                    if tokenizer.decode([word_id]) == "<|endoftext|>":
+                        break
+                    else:
+                        pert_gen_text += tokenizer.decode([word_id])
 
             print("= Perturbed generated text {} =".format(i + 1))
             print(pert_gen_text)
