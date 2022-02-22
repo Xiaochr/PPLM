@@ -807,8 +807,8 @@ def run_pplm_example(
     )
 
     # untokenize unperturbed text
-    #unpert_gen_text = tokenizer.decode(unpert_gen_tok_text.tolist()[0], skip_special_tokens=True)
-    unpert_gen_text = tokenizer.decode(unpert_gen_tok_text.tolist()[0])
+    unpert_gen_text = tokenizer.decode(unpert_gen_tok_text.tolist()[0], skip_special_tokens=True)
+    #unpert_gen_text = tokenizer.decode(unpert_gen_tok_text.tolist()[0])
 
     if verbosity_level >= REGULAR:
         print("=" * 80)
@@ -837,6 +837,9 @@ def run_pplm_example(
 
                 pert_gen_text = ''
                 for word_id in pert_gen_tok_text.tolist()[0]:
+                    if tokenizer.decode([word_id]) == "<|endoftext|>":
+                        break
+                    
                     if word_id in bow_word_ids:
                         pert_gen_text += '{}{}{}'.format(
                             colorama.Fore.RED,
