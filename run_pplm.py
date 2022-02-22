@@ -773,7 +773,7 @@ def run_pplm_example(
         )
 
     print("= Prefix of sentence =")
-    print(tokenizer.decode(tokenized_cond_text))
+    print(tokenizer.decode(tokenized_cond_text, skip_special_tokens=True))
     print()
 
     # generate unperturbed and perturbed texts
@@ -806,7 +806,7 @@ def run_pplm_example(
     )
 
     # untokenize unperturbed text
-    unpert_gen_text = tokenizer.decode(unpert_gen_tok_text.tolist()[0])
+    unpert_gen_text = tokenizer.decode(unpert_gen_tok_text.tolist()[0], skip_special_tokens=True)
 
     if verbosity_level >= REGULAR:
         print("=" * 80)
@@ -838,13 +838,13 @@ def run_pplm_example(
                     if word_id in bow_word_ids:
                         pert_gen_text += '{}{}{}'.format(
                             colorama.Fore.RED,
-                            tokenizer.decode([word_id]),
+                            tokenizer.decode([word_id], skip_special_tokens=True),
                             colorama.Style.RESET_ALL
                         )
                     else:
-                        pert_gen_text += tokenizer.decode([word_id])
+                        pert_gen_text += tokenizer.decode([word_id], skip_special_tokens=True)
             else:
-                pert_gen_text = tokenizer.decode(pert_gen_tok_text.tolist()[0])
+                pert_gen_text = tokenizer.decode(pert_gen_tok_text.tolist()[0], skip_special_tokens=True)
 
             print("= Perturbed generated text {} =".format(i + 1))
             print(pert_gen_text)
