@@ -58,14 +58,16 @@ VERBOSITY_LEVELS = {
 BAG_OF_WORDS_ARCHIVE_MAP = {
     'legal': "./paper_code/wordlists/legal.txt",
     'military': "./paper_code/wordlists/military.txt",
-    'monsters': "./paper_code/wordlists/monsters.txt",
+    'fantasy': "./paper_code/wordlists/fantasy.txt",
     'politics': "./paper_code/wordlists/politics.txt",
     'positive_words': "./paper_code/wordlists/positive_words.txt",
     'religion': "./paper_code/wordlists/religion.txt",
     'science': "./paper_code/wordlists/science.txt",
     'space': "./paper_code/wordlists/space.txt",
-    'technology': "./paper_code/wordlists/technology.txt",
+    'computers': "./paper_code/wordlists/computers.txt",
     'kitchen': "./paper_code/wordlists/kitchen.txt",
+    'monsters': "https://s3.amazonaws.com/models.huggingface.co/bert/pplm/bow/monsters.txt",
+    'technology': "https://s3.amazonaws.com/models.huggingface.co/bert/pplm/bow/technology.txt",
     # ===
     'school_life': "./paper_code/wordlists/school_life.txt",
     'science_and_nature': "./paper_code/wordlists/science_and_nature.txt",
