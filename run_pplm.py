@@ -831,6 +831,7 @@ def run_pplm_example(
             bow_word_ids.update(w[0] for w in filtered)
 
     # iterate through the perturbed texts
+    pert_gen_text_list = []
     for i, pert_gen_tok_text in enumerate(pert_gen_tok_texts):
         try:
             # untokenize unperturbed text
@@ -851,7 +852,8 @@ def run_pplm_example(
                         )
                     else:
                         #pert_gen_text += tokenizer.decode([word_id], skip_special_tokens=True)
-                        pert_gen_text += tokenizer.decode([word_id])
+                        if tokenizer.decode([word_id]) != "<|startoftext|>":
+                            pert_gen_text += tokenizer.decode([word_id])
             else:
                 #pert_gen_text = tokenizer.decode(pert_gen_tok_text.tolist()[0], skip_special_tokens=True)
                 #pert_gen_text = tokenizer.decode(pert_gen_tok_text.tolist()[0])
@@ -861,11 +863,13 @@ def run_pplm_example(
                     if tokenizer.decode([word_id]) == "<|endoftext|>":
                         break
                     else:
-                        pert_gen_text += tokenizer.decode([word_id])
+                        if tokenizer.decode([word_id]) != "<|startoftext|>":
+                            pert_gen_text += tokenizer.decode([word_id])
 
             print("= Perturbed generated text {} =".format(i + 1))
             print(pert_gen_text)
             print()
+            pert_gen_text_list.append(pert_gen_text)
         except:
             pass
 
@@ -874,7 +878,7 @@ def run_pplm_example(
             (tokenized_cond_text, pert_gen_tok_text, unpert_gen_tok_text)
         )
 
-    return generated_texts
+    return pert_gen_text_list
 
 
 if __name__ == '__main__':
