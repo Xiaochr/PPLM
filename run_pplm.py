@@ -747,7 +747,7 @@ def run_pplm_example(
 
     # load tokenizer
     tokenizer = GPT2Tokenizer.from_pretrained(pretrained_model, bos_token='<|startoftext|>', eos_token='<|endoftext|>', pad_token='<|pad|>')
-    #model.resize_token_embeddings(len(tokenizer))
+    model.resize_token_embeddings(len(tokenizer))
 
     model.to(device)
     model.eval()
